@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Scoreboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="scoreboard-container" class="scoreboard-container">
+        <div class="scoreboard scrollbar">
+            <button class="close-btn" onclick="closeScoreboard()">×</button>
+            
+            <div class="header">
+                <h1 class="title" id="server-name">M ROLEPLAY</h1>
+                <p class="subtitle" id="scoreboard-title">SCOREBOARD</p>
+            </div>
+
+            <div class="user-profile">
+                <div class="avatar">
+                    <img id="user-avatar" src="" alt="Avatar" style="display: none;">
+                    <i class="fas fa-user avatar-icon" id="default-avatar"></i>
+                </div>
+                <div class="user-info">
+                    <div class="user-name" id="user-name">Loading...</div>
+                    <div class="user-role">
+                        <span id="user-admin-status">USER</span> - <span id="user-job">Loading...</span>
+                    </div>
+                </div>
+                <div class="online-indicator">
+                    <div class="online-count-mini">
+                        <span id="online-number-mini">0</span>
+                        <i class="fas fa-users online-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="jobs-section">
+                <h3 class="section-title">Trabajos</h3>
+                <div class="jobs-container-wrapper">
+                    <div id="jobs-container" class="jobs-grid"></div>
+                </div>
+            </div>
+            
+            <div class="robberies-section">
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="robberies">
+                            <i class="fas fa-mask"></i>
+                            ROBOS DISPONIBLES
+                        </button>
+                        <button class="tab-btn" data-tab="players">
+                            <i class="fas fa-users"></i>
+                            PLAYERS IN THE CITY
+                        </button>
+                    </div>
+
+                    <div class="tab-content active" id="robberies-tab">
+                        <div id="robberies-container"></div>
+                    </div>
+
+                    <div class="tab-content" id="players-tab">
+                        <div class="search-container">
+                            <input type="text" class="search-input" id="player-search" placeholder="Search Players">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                        <div class="players-list" id="players-list">
+                            <!-- Los jugadores se cargarán aquí dinámicamente -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación para robos -->
+    <div id="robbery-modal" class="modal-overlay">
+        <div class="modal">
+            <h3 class="modal-title" id="modal-title">Confirmar Robo</h3>
+            <p class="modal-message" id="modal-message">¿Te gustaría empezar el robo?</p>
+            <div class="modal-buttons">
+                <button class="modal-btn confirm" id="modal-confirm">Sí</button>
+                <button class="modal-btn cancel" id="modal-cancel">No</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
